@@ -1,0 +1,32 @@
+{
+  "pipeline_id": "1bac6f2b-f87a-4568-86a7-8160b9900e10",
+  "pipeline_type": "ETL",
+  "name": "SILVER_DLT_PIPELINE",
+  "creator": "arnabard46@gmail.com",
+  "owner": "arnabard46@gmail.com",
+  "libraries": [
+    {
+      "notebook": {
+        "path": "/Workspace/databricks flight projects/DLT/dltpipeline.py"
+      }
+    }
+  ],
+  "target": "silver",
+  "catalog": "workspace",
+  "storage": "/Volumes/workspace/bronze/bronzevolume/bookings/data/",
+  "clusters": [
+    {
+      "label": "default",
+      "spark_version": "13.3.x-scala2.12",
+      "node_type_id": "Serverless",
+      "num_workers": 1
+    }
+  ],
+  "development": true,
+  "continuous": true,
+  "photon": true,
+  "channel": "CURRENT",
+  "configuration": {
+    "spark.sql.shuffle.partitions": "200"
+  }
+}
